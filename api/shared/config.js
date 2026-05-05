@@ -16,10 +16,13 @@ function getConfig() {
     paddleWebhookSecret: process.env.PADDLE_WEBHOOK_SECRET || '',
     paddleLifetimePriceId: process.env.PADDLE_LIFETIME_PRICE_ID || '',
 
+    cosmosConnectionString: process.env.COSMOS_CONNECTION_STRING || '',
     cosmosEndpoint: process.env.COSMOS_ENDPOINT || '',
     cosmosKey: process.env.COSMOS_KEY || '',
-    cosmosDatabase: process.env.COSMOS_DATABASE || 'dualpos',
-    cosmosContainer: process.env.COSMOS_CONTAINER || 'licenses',
+    cosmosDatabase:
+      process.env.COSMOS_DB_NAME || process.env.COSMOS_DATABASE || 'DualPOS',
+    cosmosContainer:
+      process.env.COSMOS_CONTAINER_NAME || process.env.COSMOS_CONTAINER || 'licenses',
 
     supportEmail: process.env.SUPPORT_EMAIL || 'support@abiad.systems',
     websiteUrl: process.env.WEBSITE_URL || 'https://abiad.systems',

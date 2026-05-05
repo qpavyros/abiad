@@ -10,7 +10,9 @@ module.exports = async function health(context, req) {
     return
   }
 
-  const cosmosConfigured = Boolean(config.cosmosEndpoint && config.cosmosKey)
+  const cosmosConfigured = Boolean(
+    config.cosmosConnectionString || (config.cosmosEndpoint && config.cosmosKey),
+  )
   const paddleConfigured = Boolean(config.paddleApiKey && config.paddleWebhookSecret)
 
   context.res = json(req, config, 200, {

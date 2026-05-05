@@ -5,14 +5,21 @@ let cachedContainer = null
 function getContainer(config) {
   if (cachedContainer) return cachedContainer
 
-  if (!config.cosmosEndpoint || !config.cosmosKey) {
-    throw new Error('Missing Cosmos configuration. Set COSMOS_ENDPOINT and COSMOS_KEY.')
+  const hasConnectionString = Boolean(config.cosmosConnectionString)
+  const hasEndpointAndKey = Boolean(config.cosmosEndpoint && config.cosmosKey)
+
+  if (!hasConnectionString && !hasEndpointAndKey) {
+    throw new Error(
+      'Missing Cosmos configuration. Set COSMOS_CONNECTION_STRING (recommended) or COSMOS_ENDPOINT + COSMOS_KEY.',
+    )
   }
 
-  const client = new CosmosClient({
-    endpoint: config.cosmosEndpoint,
-    key: config.cosmosKey,
-  })
+  const client = hasConnectionString
+    ? new CosmosClient(config.cosmosConnectionString)
+    : new CosmosClient({
+        endpoint: config.cosmosEndpoint,
+        key: config.cosmosKey,
+      })
 
   cachedContainer = client.database(config.cosmosDatabase).container(config.cosmosContainer)
   return cachedContainer

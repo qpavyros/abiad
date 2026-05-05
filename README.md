@@ -43,10 +43,9 @@ Set these app settings in Azure Static Web Apps:
 PADDLE_API_KEY=pdl_live_xxx
 PADDLE_WEBHOOK_SECRET=pdl_ntfset_xxx
 PADDLE_LIFETIME_PRICE_ID=pri_xxx
-COSMOS_ENDPOINT=https://<account>.documents.azure.com:443/
-COSMOS_KEY=<primary-key>
-COSMOS_DATABASE=dualpos
-COSMOS_CONTAINER=licenses
+COSMOS_CONNECTION_STRING=AccountEndpoint=https://<account>.documents.azure.com:443/;AccountKey=<key>;
+COSMOS_DB_NAME=DualPOS
+COSMOS_CONTAINER_NAME=licenses
 SUPPORT_EMAIL=support@abiad.systems
 WEBSITE_URL=https://abiad.systems
 SMTP_HOST=smtp.yourprovider.com
@@ -55,6 +54,15 @@ SMTP_USER=your_smtp_user
 SMTP_PASS=your_smtp_password
 SMTP_FROM=support@abiad.systems
 CORS_ALLOWED_ORIGINS=https://abiad.systems,https://www.abiad.systems
+```
+
+Legacy Cosmos variables are still supported if needed:
+
+```bash
+COSMOS_ENDPOINT=
+COSMOS_KEY=
+COSMOS_DATABASE=
+COSMOS_CONTAINER=
 ```
 
 Paddle webhook URL:

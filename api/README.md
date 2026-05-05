@@ -19,10 +19,9 @@ This folder contains the backend endpoints used for:
 PADDLE_API_KEY=
 PADDLE_WEBHOOK_SECRET=
 PADDLE_LIFETIME_PRICE_ID=
-COSMOS_ENDPOINT=
-COSMOS_KEY=
-COSMOS_DATABASE=dualpos
-COSMOS_CONTAINER=licenses
+COSMOS_CONNECTION_STRING=
+COSMOS_DB_NAME=DualPOS
+COSMOS_CONTAINER_NAME=licenses
 SUPPORT_EMAIL=support@abiad.systems
 WEBSITE_URL=https://abiad.systems
 SMTP_HOST=
@@ -31,6 +30,15 @@ SMTP_USER=
 SMTP_PASS=
 SMTP_FROM=support@abiad.systems
 CORS_ALLOWED_ORIGINS=https://abiad.systems,https://www.abiad.systems
+```
+
+Optional legacy alternative:
+
+```text
+COSMOS_ENDPOINT=
+COSMOS_KEY=
+COSMOS_DATABASE=
+COSMOS_CONTAINER=
 ```
 
 ## Cosmos container shape
