@@ -1,8 +1,15 @@
 import LegalPageLayout from './LegalPageLayout'
+import SeoMeta from '../components/SeoMeta'
 
 function PrivacyPage() {
   return (
     <LegalPageLayout title="Privacy Policy">
+      <SeoMeta
+        title="Privacy Policy | DualPOS"
+        description="Understand how DualPOS handles privacy with offline-first local data storage and minimal data collection."
+        path="/privacy"
+      />
+
       <p>
         This Privacy Policy explains how DualPOS handles user information.
       </p>

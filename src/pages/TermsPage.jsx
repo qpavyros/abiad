@@ -1,8 +1,15 @@
 import LegalPageLayout from './LegalPageLayout'
+import SeoMeta from '../components/SeoMeta'
 
 function TermsPage() {
   return (
     <LegalPageLayout title="Terms of Service">
+      <SeoMeta
+        title="Terms of Service | DualPOS"
+        description="Read the Terms of Service for DualPOS software licensing, liability limitations, and usage conditions."
+        path="/terms"
+      />
+
       <p>
         These Terms of Service govern your purchase and use of DualPOS. By
         purchasing or using the software, you agree to the terms below.

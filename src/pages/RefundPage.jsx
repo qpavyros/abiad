@@ -1,8 +1,15 @@
 import LegalPageLayout from './LegalPageLayout'
+import SeoMeta from '../components/SeoMeta'
 
 function RefundPage() {
   return (
     <LegalPageLayout title="Refund Policy">
+      <SeoMeta
+        title="Refund Policy | DualPOS"
+        description="DualPOS refund terms including the 14-day refund window and license deactivation conditions."
+        path="/refund"
+      />
+
       <p>
         We want your purchase decision to be low risk and transparent.
       </p>

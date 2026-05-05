@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SeoMeta from '../components/SeoMeta'
 
 const featureItems = [
   {
@@ -38,6 +39,12 @@ const pricingItems = [
 function HomePage() {
   return (
     <div className="min-h-screen">
+      <SeoMeta
+        title="DualPOS | Offline-First POS for Dual-Currency Businesses"
+        description="Manage sales in USD and LBP seamlessly. Track inventory, manage shifts, and record expenses without needing an active internet connection."
+        path="/"
+      />
+
       <header className="sticky top-0 z-30 border-b border-[var(--brand-border)] bg-white/90 backdrop-blur">
         <div className="mx-auto w-full max-w-6xl px-5 py-4 md:px-6">
           <div className="flex items-center justify-between">

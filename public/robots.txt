@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: abiad.systems
+Sitemap: https://abiad.systems/sitemap.xml
