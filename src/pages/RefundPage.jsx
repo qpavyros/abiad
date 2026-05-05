@@ -28,8 +28,8 @@ function RefundPage() {
         <h2 className="text-2xl font-bold text-[var(--text-main)]">3. How to Request</h2>
         <p>
           Send your request to{' '}
-          <a href="mailto:support@yourdomain.com" className="font-semibold underline">
-            support@yourdomain.com
+          <a href="mailto:support@abiad.systems" className="font-semibold underline">
+            support@abiad.systems
           </a>{' '}
           with your order reference and a short reason for the refund request.
         </p>

@@ -47,8 +47,8 @@ function PrivacyPage() {
         <h2 className="text-2xl font-bold text-[var(--text-main)]">5. Contact</h2>
         <p>
           For any privacy requests, contact{' '}
-          <a href="mailto:support@yourdomain.com" className="font-semibold underline">
-            support@yourdomain.com
+          <a href="mailto:support@abiad.systems" className="font-semibold underline">
+            support@abiad.systems
           </a>
           .
         </p>

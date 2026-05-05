@@ -187,10 +187,10 @@ function HomePage() {
               Contact us for setup guidance, deployment tips, or Paddle billing questions.
             </p>
             <a
-              href="mailto:support@yourdomain.com"
+              href="mailto:support@abiad.systems"
               className="mt-5 inline-flex rounded-full bg-[var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white"
             >
-              support@yourdomain.com
+              support@abiad.systems
             </a>
           </div>
         </section>
@@ -212,8 +212,8 @@ function HomePage() {
             </Link>
           </div>
 
-          <a href="mailto:support@yourdomain.com" className="font-semibold hover:underline">
-            support@yourdomain.com
+          <a href="mailto:support@abiad.systems" className="font-semibold hover:underline">
+            support@abiad.systems
           </a>
         </div>
       </footer>
