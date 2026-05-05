@@ -1,0 +1,13 @@
+{
+  "name": "dualpos-license-api",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.3.0",
+    "@paddle/paddle-node-sdk": "^2.8.0",
+    "nodemailer": "^6.9.18"
+  }
+}

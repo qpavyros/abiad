@@ -1,5 +1,7 @@
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SeoMeta from '../components/SeoMeta'
+import { openPaddleCheckout } from '../lib/paddleCheckout'
 
 const featureItems = [
   {
@@ -37,6 +39,38 @@ const pricingItems = [
 ]
 
 function HomePage() {
+  const [checkoutBusy, setCheckoutBusy] = useState(false)
+  const [checkoutMessage, setCheckoutMessage] = useState('')
+
+  const isCheckoutConfigured = useMemo(
+    () =>
+      Boolean(
+        import.meta.env.VITE_PADDLE_CLIENT_TOKEN && import.meta.env.VITE_PADDLE_PRICE_ID,
+      ),
+    [],
+  )
+
+  const handleOpenCheckout = async () => {
+    if (!isCheckoutConfigured) {
+      setCheckoutMessage(
+        'Checkout is not configured yet. Please set VITE_PADDLE_CLIENT_TOKEN and VITE_PADDLE_PRICE_ID.',
+      )
+      return
+    }
+
+    setCheckoutBusy(true)
+    setCheckoutMessage('')
+
+    try {
+      await openPaddleCheckout()
+    } catch (error) {
+      console.error('Failed to open Paddle checkout:', error)
+      setCheckoutMessage('Unable to open checkout right now. Please try again in a moment.')
+    } finally {
+      setCheckoutBusy(false)
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <SeoMeta
@@ -172,14 +206,17 @@ function HomePage() {
                 ))}
               </ul>
 
-              <a
-                href="#"
-                className="mt-6 inline-flex rounded-full bg-[var(--brand-highlight)] px-6 py-3 text-sm font-bold text-[#3f2606] transition hover:brightness-105"
+              <button
+                type="button"
+                onClick={handleOpenCheckout}
+                disabled={checkoutBusy || !isCheckoutConfigured}
+                className="mt-6 inline-flex rounded-full bg-[var(--brand-highlight)] px-6 py-3 text-sm font-bold text-[#3f2606] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Buy License
-              </a>
+                {checkoutBusy ? 'Opening checkout...' : 'Buy License'}
+              </button>
               <p className="mt-3 text-xs text-[#d8e4dd]">
-                Checkout button placeholder for Paddle overlay integration.
+                {checkoutMessage ||
+                  'Secure checkout is processed by Paddle with one-time lifetime billing.'}
               </p>
             </div>
           </div>
