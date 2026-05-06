@@ -1,0 +1,44 @@
+/* Import custom fonts */
+
+/* Sora - Headings (English) */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+/* Manrope - Body (English) */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+
+/* IBM Plex Mono - Numbers/Prices/Receipts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* Noto Kufi Arabic - Arabic Headings/Body */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
+
+/* Font family assignments */
+:root {
+  --font-heading: 'Sora', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-arabic: 'Noto Kufi Arabic', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Arabic language support */
+html[lang="ar"], html[lang="ar"] * {
+  font-family: var(--font-arabic);
+}
+
+/* Monospace for numbers and prices */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Ensure numbers stay in mono even in RTL */
+[dir="rtl"] .font-mono {
+  font-family: var(--font-mono);
+}
